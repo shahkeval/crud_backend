@@ -12,10 +12,15 @@
         "dest": "server.js"
       }
     ],
-    "headers": [
+   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'crud-backend-delta.vercel.app'; script-src 'crud-backend-delta.vercel.app' https://vercel.live;"
         }
-    ]
+      ]
+    }
+]
   }
