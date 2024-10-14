@@ -20,6 +20,9 @@ router.post("/add",async (req,res)=>{
     }
 });
 
+router.get("/",async(req,res)=>{
+   console.log("hello");
+});
 
 router.get("/show", async (req, res) => {
      try {
