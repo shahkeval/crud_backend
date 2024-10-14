@@ -19,3 +19,4 @@ then(()=>{
 })
 
 app.use(userRoute);
+module.exports = app;
