@@ -13,7 +13,7 @@ then(()=>{
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+            serverSelectionTimeoutMS: 60000, // Increase timeout to 30 seconds
         }
     );
     app.listen(process.env.port || 8001,(err)=>{
