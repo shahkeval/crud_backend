@@ -21,7 +21,7 @@ router.post("/add",async (req,res)=>{
 });
 
 router.get("/",async(req,res)=>{
-   console.log("hello");
+   res.json("hello");
 });
 
 router.get("/show", async (req, res) => {
