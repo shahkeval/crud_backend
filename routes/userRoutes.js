@@ -20,9 +20,9 @@ router.post("/add",async (req,res)=>{
     }
 });
 
-router.get("/",async(req,res)=>{
-   res.json("hello");
-});
+//router.get("/",async(req,res)=>{
+//   res.json("hello");
+//});
 
 router.get("/", async (req, res) => {
      try {
