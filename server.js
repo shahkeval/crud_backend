@@ -9,7 +9,13 @@ app.use(cors());
 app.use(express.json());
 mongoose.connect(process.env.url).
 then(()=>{
-    console.log("Database connected successfuly.");
+    console.log("Database connected successfuly.",
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+        }
+    );
     app.listen(process.env.port || 8001,(err)=>{
         if(err) console.log(err);
         console.log("server running at",process.env.port);
