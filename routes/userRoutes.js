@@ -13,10 +13,10 @@ router.post("/add",async (req,res)=>{
             email:email,
             age:age,
         });
-        res.status(201).json(userAdded);
+        res.sendStatus(201).json(userAdded);
     } catch (error) {
         console.log(error);
-        res.status(400).json({error:error.message});
+        res.sendStatus(400).json({error:error.message});
     }
 });
 
