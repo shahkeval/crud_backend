@@ -7,22 +7,14 @@ const userRoute = require("./routes/userRoutes.js");
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-mongoose.connect(process.env.url).
-then(()=>{
-    console.log("Database connected successfuly.",
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 60000, // Increase timeout to 30 seconds
-        }
-    );
-    app.listen(process.env.port || 8001,(err)=>{
-        if(err) console.log(err);
-        console.log("server running at",process.env.port);
-    });
-}).catch((error)=>{
-    console.log("error",error);
-})
+
+mongoose.connect(process.env.url, {
+   
+    serverSelectionTimeoutMS: 30000,  // Increase the timeout to 30 seconds
+    socketTimeoutMS: 45000,           // Increase socket timeout if needed
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch((error) => console.log('MongoDB connection error:', error));
 
 app.use(userRoute);
 module.exports = app;
